@@ -19,7 +19,7 @@ before(async () => {
 
 // global after
 after(async () => {
-    await mock.stop();
+    await mock.stop(4000);
     await reporter.end();
 });
 
@@ -44,6 +44,6 @@ handler.addInteractionHandler('Categoria response', () =>{
 it('API - deve listar categoria com sucesso', async () => {
     await flow("categoria")
     .useInteraction('Categoria response')
-        .get('http://lojaebac.ebaconline.art.br/public/getCategories')
+        .get(http://localhost:4000/public/getCategories')
         .expectStatus(200)
   });
